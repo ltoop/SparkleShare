@@ -997,7 +997,6 @@ namespace SparkleShare {
 
 
             fetcher.Failed += delegate {
-
                 if (FolderFetchError != null)
                     FolderFetchError ();
 
