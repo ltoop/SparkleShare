@@ -100,8 +100,8 @@ namespace SparkleShare {
 
         public void AddPageCompleted (string server, string folder_name)
         {
-            this.syncing_folder = Path.GetFileNameWithoutExtension (folder_name);
             this.previous_server = server;
+            this.syncing_folder  = folder_name;
             this.previous_folder = folder_name;
 
             if (ChangePageEvent != null)
@@ -121,7 +121,7 @@ namespace SparkleShare {
                 this.syncing_folder = "";
             };
 
-            SparkleShare.Controller.FetchFolder (server, this.syncing_folder);
+            SparkleShare.Controller.FetchFolder (server, folder_name);
         }
 
 

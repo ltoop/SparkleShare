@@ -19,17 +19,16 @@ SOURCES =  \
 	SparkleEntry.cs \
 	SparkleEventLog.cs \
 	SparkleEventLogController.cs \
-	SparkleInfobar.cs \
-	SparkleIntro.cs \
 	SparkleLinController.cs \
+	SparkleSetup.cs \
 	SparkleSetupController.cs \
+	SparkleSetupWindow.cs \
 	SparkleShare.cs \
 	SparkleSpinner.cs \
 	SparkleStatusIcon.cs \
 	SparkleStatusIconController.cs \
 	SparkleUI.cs \
-	SparkleUIHelpers.cs \
-	SparkleWindow.cs
+	SparkleUIHelpers.cs
 
 include $(top_srcdir)/build/build.mk
 

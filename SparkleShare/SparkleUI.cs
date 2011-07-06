@@ -34,7 +34,7 @@ namespace SparkleShare {
         
         public static SparkleStatusIcon StatusIcon;
         public static SparkleEventLog EventLog;
-        public static SparkleIntro Intro;
+        public static SparkleSetup Setup;
 
 
         // Short alias for the translations
@@ -56,20 +56,15 @@ namespace SparkleShare {
             StatusIcon = new SparkleStatusIcon ();
             
             if (SparkleShare.Controller.FirstRun) {
-                Intro = new SparkleIntro ();
-                Intro.ShowAccountForm ();
+                Setup = new SparkleSetup ();
+                Setup.Controller.ShowSetupPage ();
             }
             
             SparkleShare.Controller.OnQuitWhileSyncing += delegate {
                 // TODO: Pop up a warning when quitting whilst syncing
             };
 
-            SparkleShare.Controller.OnInvitation += delegate (string server, string folder, string token) {
-                Application.Invoke (delegate {
-                    SparkleIntro intro = new SparkleIntro ();
-                    intro.ShowInvitationPage (server, folder, token);
-                });
-            };
+
 
             // Show a bubble when there are new changes
             SparkleShare.Controller.NotificationRaised += delegate (string user_name, string user_email,
